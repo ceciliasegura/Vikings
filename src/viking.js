@@ -5,48 +5,81 @@ class Soldier {
         this.strength = strength;
     }
 
-    getAttack() {
-        console.log(this.strength);
+    attack() {
+        return this.strength;
     }
 
-    getReceiveDamage(damage) {
-        console.log(this.health);
+    receiveDamage(damage) {
+        this.health = this.health - damage
     }
 }
 
-// Viking
+// // Viking
 class Viking extends Soldier {
-    constructor(name) {
+    constructor(name, health, strength) {
         super(health, strength)
         this.name = name;
     }
 
-    getReceiveDamage(damage) {
-        if () {
-            console.log("NAME has received DAMAGE points of damage")
+    receiveDamage(damage) {
+        this.health = this.health - damage
+        if (this.health > 0) {
+            return `${this.name} has received ${damage} points of damage`
         } else {
-            console.log("NAME has died in act of combat")
+            return `${this.name} has died in act of combat`
         }
-        getBattleCry() {
-            console.log("Odin os pertenece a todos")
-        }
+    }
 
+    battleCry() {
+        return "Odin Owns You All!"
 
     }
 
-// Saxon
+}
+
+
+
+// // Saxon
 class Saxon extends Soldier {
-    constructor(health, strength)
-
-    getReceiveDamage(damage) {
-        if () {
-            console.log("A Saxon has received DAMAGE points of damage")
+    receiveDamage(damage) {
+        this.health = this.health - damage
+        if (this.health > 0) {
+            return `A Saxon has received ${damage} points of damage`
         } else {
-            console.log("el sajon ha A Saxon has died in combat")
+            return `A Saxon has died in combat`
         }
-
     }
 }
 
-// War
-class War { }
+// // War
+class War {
+    constructor() {
+        this.vikingArmy = []
+        this.saxonArmy = []
+    }
+    addViking(Viking) {
+        this.vikingArmy.push(Viking)
+    }
+
+    addSaxon(Saxon) {
+        this.saxonArmy.push(Saxon)
+    }
+
+    vikingAttack() {
+
+    }
+
+    saxonAttack() {
+
+    }
+
+
+    showStatus() {
+
+    }
+
+
+
+}
+
+
